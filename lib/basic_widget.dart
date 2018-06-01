@@ -3,11 +3,21 @@ import 'package:flutter/material.dart';
 class BasicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Basic Widget"),
-        ),
-        body: new BasicColumnWidget());
+  return new DefaultTabController(length: 3, child: new Scaffold(
+    appBar: new AppBar(
+      bottom: new TabBar(tabs: [
+        new Tab(icon: new Icon(Icons.directions_car),),
+        new Tab(icon: new Icon(Icons.directions_boat),),
+        new Tab(icon: new Icon(Icons.directions_bike),)
+      ]),
+      title: new Text("Basic Widget"),
+    ),
+    body: new TabBarView(children: [
+      new BasicColumnWidget(),
+      new Icon(Icons.directions_boat),
+      new Icon(Icons.directions_bike)
+    ]),
+  ));
   }
 }
 
