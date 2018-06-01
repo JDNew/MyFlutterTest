@@ -9,6 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Flutter Test',
+      //创建app的主题
       theme: new ThemeData(
           brightness: Brightness.dark,
           primaryColor: Colors.lightBlue[800],
@@ -29,6 +30,7 @@ class HomeWidget extends StatelessWidget {
         children: <Widget>[
           new RaisedButton(
             onPressed: () {
+              //页面跳转
               Navigator.push(
                 context,
                 new MaterialPageRoute(builder: (context) => new BasicWidget()),
@@ -38,6 +40,7 @@ class HomeWidget extends StatelessWidget {
           )
         ],
       ),
+      //利用继承修改属于浮动按钮的主题，使用copyWith方法
       floatingActionButton: new Theme(
           data: Theme.of(context).copyWith(accentColor: Colors.yellow),
           child: new FloatingActionButton(
